@@ -44,6 +44,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -67,6 +68,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\MusicShopDB.mdf" />
+    <Content Include="App_Data\MusicShopDB_log.ldf">
+      <DependentUpon>MusicShopDB.mdf</DependentUpon>
+    </Content>
     <Content Include="CartPage\cartpage.aspx" />
     <Content Include="Global.asax" />
     <Content Include="HomePage\homePage.aspx" />
@@ -98,6 +103,11 @@
     <Compile Include="Master-Page\MusicStoreMain.Master.designer.cs">
       <DependentUpon>MusicStoreMain.Master</DependentUpon>
     </Compile>
+    <Compile Include="MusicShop.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MusicShop.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchPage\SearchPage.aspx.cs">
       <DependentUpon>SearchPage.aspx</DependentUpon>
@@ -109,6 +119,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Master-Page\MusicStoreMain.Master" />
+    <Content Include="MusicShop.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>MusicShop.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="MusicShop.dbml.layout">
+      <DependentUpon>MusicShop.dbml</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -118,8 +136,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
