@@ -11,6 +11,14 @@ namespace MusicShop
     {
         protected void Application_Start(object sender, EventArgs e)
         {
+
         }
     }
+    // declaring the connString here for easier access to switch 
+    public static class MyStaticValues
+    {
+        public static string conn = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\parke\\Documents\\MusicShopDB.mdf;Integrated Security=True;Connect Timeout=30";
+
+    }
 }
+
